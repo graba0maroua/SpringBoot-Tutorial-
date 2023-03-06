@@ -1,0 +1,16 @@
+Spring boot does autoconfiguration for us, but it allows us to change it
+by using  application.properties file we can add al diff properties
+Example : change where the server runs with the property => server.port = 8082
+
+EXPLANATION :
+This is the rest of the code for the Spring Boot application you mentioned earlier:
+
+The entity package contains the Department class, which is an entity class that is mapped to a database table using the @Entity annotation. This class has fields representing the columns of the table, as well as getters and setters for each field. It also contains constructors and a toString() method for convenience.
+
+The repository package contains the DepartmentRepository interface, which extends the JpaRepository interface provided by Spring Data JPA. This interface provides methods for accessing the database and performing CRUD operations on the Department table, such as findAll(), save(), and deleteById().
+
+The service package contains the DepartmentService interface and its implementation, DepartmentServiceImpl. The DepartmentService interface defines the methods that will be implemented by the service layer to handle business logic related to the Department entity. The DepartmentServiceImpl class provides the actual implementation of these methods, such as saveDepartment() and fetchDepartmentList(). It interacts with the DepartmentRepository interface to access the database and perform CRUD operations on the Department table.
+
+The controller package contains the DepartmentController class, which is responsible for handling incoming HTTP requests related to the Department entity. This class has two methods: saveDepartment() and fetchDepartmentList(), which map to the POST and GET requests respectively. The saveDepartment() method uses the @PostMapping annotation to handle a POST request to the /departments endpoint, and it saves a Department object in the database using the DepartmentService.saveDepartment() method. The fetchDepartmentList() method uses the @GetMapping annotation to handle a GET request to the /departments endpoint, and it returns a list of all Department objects in the database using the DepartmentService.fetchDepartmentList() method.
+
+Overall, this Spring Boot application follows the Model-View-Controller (MVC) architectural pattern, where the entity represents the model, the controller handles user input and returns appropriate responses, and the service layer provides business logic and interacts with the repository layer to perform database operations.

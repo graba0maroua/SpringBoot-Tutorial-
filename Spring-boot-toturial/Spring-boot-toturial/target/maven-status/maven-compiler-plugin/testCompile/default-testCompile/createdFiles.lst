@@ -1,0 +1,4 @@
+com\gb\Springboottoturial\Controller\DepartmentControllerTest.class
+com\gb\Springboottoturial\service\DepartmentServiceTest.class
+com\gb\Springboottoturial\repository\DepartmentRepositoryTest.class
+com\gb\Springboottoturial\SpringBootToturialApplicationTests.class

@@ -1,0 +1,53 @@
+server:
+  port: 8082
+---
+spring:
+  config:
+    activate:
+      on-profile: qa
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/gbapp-qa?useLegacyDatetimeCode=false&serverTimezone=UTC
+    password: Marouabestfullstackdev231220*
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+
+
+---
+management:
+  endpoints:
+  web:
+  exposure:
+  include : "env"
+---
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/gbapp?useLegacyDatetimeCode=false&serverTimezone=UTC
+    password: Marouabestfullstackdev231220*
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/gbapp-prod?useLegacyDatetimeCode=false&serverTimezone=UTC
+    password: Marouabestfullstackdev231220*
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+
